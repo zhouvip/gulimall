@@ -1,16 +1,16 @@
 package com.nanjing.gulimall.product.service.impl;
 
-import org.springframework.stereotype.Service;
-import java.util.Map;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.nanjing.common.utils.PageUtils;
 import com.nanjing.common.utils.Query;
+import com.nanjing.gulimall.product.dao.CommentReplayDao;
+import com.nanjing.gulimall.product.entity.CommentReplayEntity;
+import com.nanjing.gulimall.product.service.CommentReplayService;
+import org.springframework.stereotype.Service;
 
-import com.nanjing.gulimail.product.dao.CommentReplayDao;
-import com.nanjing.gulimail.product.entity.CommentReplayEntity;
-import com.nanjing.gulimail.product.service.CommentReplayService;
+import java.util.Map;
 
 
 @Service("commentReplayService")

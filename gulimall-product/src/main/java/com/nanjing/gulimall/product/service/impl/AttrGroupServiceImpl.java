@@ -1,16 +1,16 @@
 package com.nanjing.gulimall.product.service.impl;
 
-import org.springframework.stereotype.Service;
-import java.util.Map;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.nanjing.common.utils.PageUtils;
 import com.nanjing.common.utils.Query;
+import com.nanjing.gulimall.product.dao.AttrGroupDao;
+import com.nanjing.gulimall.product.entity.AttrGroupEntity;
+import com.nanjing.gulimall.product.service.AttrGroupService;
+import org.springframework.stereotype.Service;
 
-import com.nanjing.gulimail.product.dao.AttrGroupDao;
-import com.nanjing.gulimail.product.entity.AttrGroupEntity;
-import com.nanjing.gulimail.product.service.AttrGroupService;
+import java.util.Map;
 
 
 @Service("attrGroupService")
