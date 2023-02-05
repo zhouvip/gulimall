@@ -5,9 +5,9 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.nanjing.common.utils.PageUtils;
 import com.nanjing.common.utils.Query;
+import com.nanjing.gulimall.product.service.SpuInfoDescService;
 import com.nanjing.gulimall.product.dao.SpuInfoDescDao;
 import com.nanjing.gulimall.product.entity.SpuInfoDescEntity;
-import com.nanjing.gulimall.product.service.SpuInfoDescService;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;

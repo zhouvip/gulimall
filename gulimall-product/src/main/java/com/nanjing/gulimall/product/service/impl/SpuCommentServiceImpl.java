@@ -5,9 +5,9 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.nanjing.common.utils.PageUtils;
 import com.nanjing.common.utils.Query;
+import com.nanjing.gulimall.product.service.SpuCommentService;
 import com.nanjing.gulimall.product.dao.SpuCommentDao;
 import com.nanjing.gulimall.product.entity.SpuCommentEntity;
-import com.nanjing.gulimall.product.service.SpuCommentService;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;

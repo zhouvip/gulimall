@@ -6,8 +6,8 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.nanjing.common.utils.PageUtils;
 import com.nanjing.common.utils.Query;
 import com.nanjing.gulimall.product.dao.BrandDao;
-import com.nanjing.gulimall.product.entity.BrandEntity;
 import com.nanjing.gulimall.product.service.BrandService;
+import com.nanjing.gulimall.product.entity.BrandEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
