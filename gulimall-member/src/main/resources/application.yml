@@ -6,7 +6,7 @@ server:
 
 spring:
   application:
-    name: gulimall-product
+    name: gulimall-member
   datasource:
     username: root
     password: 123456
