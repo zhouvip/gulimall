@@ -24,7 +24,7 @@ public class PrintlnLogAspect {
         } catch (Throwable throwable) {
             throwable.printStackTrace();
         }
-        System.out.println("log - method around after.cost time:" + (System.currentTimeMillis() - startTime));
+        System.out.println("log - method around after.cost time:" + (System.currentTimeMillis() - startTime)+"毫秒");
         return object;
     }
 }

@@ -17,6 +17,7 @@ public interface CouponService extends IService<CouponEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
 
-    public void show();
+    void show();
+
 }
 
