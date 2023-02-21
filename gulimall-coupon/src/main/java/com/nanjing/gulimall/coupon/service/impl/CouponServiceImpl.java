@@ -1,5 +1,6 @@
 package com.nanjing.gulimall.coupon.service.impl;
 
+import com.nanjing.common.zhouaop.PringLog;
 import com.nanjing.gulimall.coupon.entity.CouponEntity;
 import org.springframework.stereotype.Service;
 import java.util.Map;
@@ -24,6 +25,13 @@ public class CouponServiceImpl extends ServiceImpl<CouponDao, CouponEntity> impl
         );
 
         return new PageUtils(page);
+    }
+
+    @PringLog
+    @Override
+    public void show(){
+        for (int i = 0; i < 1000; i++) {
+        }
     }
 
 }

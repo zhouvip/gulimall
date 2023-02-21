@@ -1,5 +1,6 @@
 package com.nanjing.gulimall.coupon;
 
+import com.nanjing.common.zhouaop.PringLog;
 import com.nanjing.gulimall.coupon.entity.CouponEntity;
 import com.nanjing.gulimall.coupon.service.CouponService;
 import org.junit.jupiter.api.Test;
@@ -17,6 +18,12 @@ class GulimallCouponApplicationTests {
         CouponEntity coupon = new CouponEntity();
         coupon.setCouponName("优惠券2023");
         couponService.save(coupon);
+        System.out.println("保存成功----------");
+    }
+
+    @Test
+    void testAop() {
+        couponService.show();
         System.out.println("保存成功----------");
     }
 
