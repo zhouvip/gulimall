@@ -20,4 +20,6 @@ buildNumber.properties
 
 *.iml
 
+.murphy.yml
+
 **/.gitignore
