@@ -4,10 +4,10 @@ import com.nanjing.common.utils.R;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@FeignClient("gulimall-coupon")
-public interface CouponFeignService {
+@FeignClient(value = "gulimall-coupon", path = "/coupon/coupon", fallback = CouponFeignServiceFallback_delete.class)
+public interface CouponFeignService_delete {
 
-    @RequestMapping("/coupon/coupon/member/list")
+    @RequestMapping("/member/list")
     public R membercoupons();
 
 }
