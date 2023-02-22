@@ -2,7 +2,6 @@ package com.nanjing.gulimall.coupon;
 
 import com.nanjing.common.zhouaop.AppConfig;
 import com.nanjing.common.zhouaop.Car;
-import com.nanjing.common.zhouaop.PringLog;
 import com.nanjing.gulimall.coupon.entity.CouponEntity;
 import com.nanjing.gulimall.coupon.service.CouponService;
 import org.junit.jupiter.api.Test;

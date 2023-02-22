@@ -2,6 +2,7 @@ package com.nanjing.gulimall.coupon.service.impl;
 
 import com.nanjing.common.zhouaop.PringLog;
 import com.nanjing.gulimall.coupon.entity.CouponEntity;
+import com.nanjing.gulimall.coupon.zhouaop.PringLog2;
 import org.springframework.stereotype.Service;
 import java.util.Map;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -28,7 +29,7 @@ public class CouponServiceImpl extends ServiceImpl<CouponDao, CouponEntity> impl
     }
 
     @Override
-    @PringLog
+    @PringLog2
     public void show(){
         System.out.println("---------");
     }
