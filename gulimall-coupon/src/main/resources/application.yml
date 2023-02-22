@@ -32,3 +32,17 @@ mybatis-plus:
       logic-delete-value: 1
       logic-not-delete-value: 0
 
+#默认Feign客户端只等待1s，如果我们的业务处理超过1s，Feign客户端就会直接返回并且报错。
+#为了避免这种情况，我们需要设置Feign客户端超时控制。但是Feign的超时时长是通过Ribbon控制的。
+#所以我们需要配置Ribbon的超时时长配置了
+ribbon:
+  #建立连接后从服务器读取到可用资源所用的时间
+  ReadTimeout: 2000
+  #指的是建立连接所用的时间，适用于网络状况正常的情况下，两端连接所用的时间
+  ConnectTimeout: 2000
+
+logging:
+  level:
+    # feign日志以什么级别监控哪个接口
+    com.nanjing.gulimall.coupon.feign.CouponFeignClient: debug
+
