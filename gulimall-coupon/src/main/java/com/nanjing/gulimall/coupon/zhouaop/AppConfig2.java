@@ -10,6 +10,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  * @date 2023/2/21 17:01
  * https://blog.51cto.com/u_15060508/4372039
  * springboot在公共模块自定义注解，在其他微服务使用时无法生效问题
+ * http://events.jianshu.io/p/8485c1bdc444
  */
 @Configuration
 @ComponentScan(basePackages = "com.nanjing")
