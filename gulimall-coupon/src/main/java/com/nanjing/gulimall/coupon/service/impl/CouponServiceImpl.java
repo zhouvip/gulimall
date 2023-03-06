@@ -1,18 +1,17 @@
 package com.nanjing.gulimall.coupon.service.impl;
 
-import com.nanjing.common.zhouaop.PringLog;
-import com.nanjing.gulimall.coupon.entity.CouponEntity;
-import com.nanjing.gulimall.coupon.zhouaop.PringLog2;
-import org.springframework.stereotype.Service;
-import java.util.Map;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.nanjing.common.utils.PageUtils;
 import com.nanjing.common.utils.Query;
-
+import com.nanjing.common.zhouaop.PringLog;
 import com.nanjing.gulimall.coupon.dao.CouponDao;
+import com.nanjing.gulimall.coupon.entity.CouponEntity;
 import com.nanjing.gulimall.coupon.service.CouponService;
+import org.springframework.stereotype.Service;
+
+import java.util.Map;
 
 
 @Service("couponService")
@@ -29,7 +28,7 @@ public class CouponServiceImpl extends ServiceImpl<CouponDao, CouponEntity> impl
     }
 
     @Override
-    @PringLog2
+    @PringLog
     public void show(){
         System.out.println("---------");
     }
