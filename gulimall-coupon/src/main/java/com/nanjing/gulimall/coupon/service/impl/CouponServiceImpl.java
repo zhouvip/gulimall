@@ -9,6 +9,8 @@ import com.nanjing.common.zhouaop.PringLog;
 import com.nanjing.gulimall.coupon.dao.CouponDao;
 import com.nanjing.gulimall.coupon.entity.CouponEntity;
 import com.nanjing.gulimall.coupon.service.CouponService;
+import com.nanjing.gulimall.coupon.zhouyimoaop.MyAspectAnnotation;
+import com.nanjing.gulimall.coupon.zhouyimoaop.Student;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
@@ -31,6 +33,19 @@ public class CouponServiceImpl extends ServiceImpl<CouponDao, CouponEntity> impl
     @PringLog
     public void show(){
         System.out.println("---------");
+    }
+
+    @Override
+    @MyAspectAnnotation(name = "张三", key = "key1", id = "111")
+    public void show2(){
+        System.out.println("---------");
+    }
+
+    @Override
+    //@MyAspectAnnotation(name = "#{student.name}", key = "#{key}", id = "#{student.id}")
+    @MyAspectAnnotation(name = "pre_#{student.name}_#{student.id}_#{key}", key = "#{key}", id = "#{student.id}")
+    public void doSomeThing(String key, Student student){
+        System.out.println("doSomeThing..........................");
     }
 
 }

@@ -3,6 +3,7 @@ package com.nanjing.gulimall.coupon.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.nanjing.common.utils.PageUtils;
 import com.nanjing.gulimall.coupon.entity.CouponEntity;
+import com.nanjing.gulimall.coupon.zhouyimoaop.Student;
 
 import java.util.Map;
 
@@ -19,5 +20,8 @@ public interface CouponService extends IService<CouponEntity> {
 
     void show();
 
+    void show2();
+
+    void doSomeThing(String key, Student student);
 }
 

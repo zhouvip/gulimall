@@ -7,30 +7,25 @@ import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.stereotype.Component;
-
-import java.lang.reflect.Method;
 
 /**
  * @author yimo
  * @version 1.0
- * @date 2023/3/4 17:20
- * https://zhuanlan.zhihu.com/p/538132473
+ * @date 2023/3/7 14:05
  */
 @Aspect
 @Component
 @Slf4j
-public class MyAspect {
+public class MyAspectNew {
 
-    /*@Around(value = "@annotation(myAspectAnnotation)", argNames = "joinPoint,myAspectAnnotation")
+    @Around(value = "@annotation(myAspectAnnotation)", argNames = "joinPoint,myAspectAnnotation")
     public Object doAround(ProceedingJoinPoint joinPoint, MyAspectAnnotation myAspectAnnotation) throws Throwable {
         log.info("进入环绕切面...................");
-        MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
-        Method method = methodSignature.getMethod();
-        String name = myAspectAnnotation.name();
-        String key = myAspectAnnotation.key();
-        Integer id =  Integer.parseInt(myAspectAnnotation.id());
+        String name = (String) AnnotationResolverNew.newInstance().resolver(joinPoint, myAspectAnnotation.name());
+        String key = (String) AnnotationResolverNew.newInstance().resolver(joinPoint, myAspectAnnotation.key());
+        //Integer id = (Integer) AnnotationResolverNew.newInstance().resolver(joinPoint, myAspectAnnotation.id()); 转换异常，改成String
+        String id = (String) AnnotationResolverNew.newInstance().resolver(joinPoint, myAspectAnnotation.id());
         log.info("name...................{}", name);
         log.info("key...................{}", key);
         log.info("id...................{}", id);
@@ -45,19 +40,15 @@ public class MyAspect {
     @Before(value = "@annotation(myAspectAnnotation)", argNames = "joinPoint,myAspectAnnotation")
     public void beforeLog(JoinPoint joinPoint, MyAspectAnnotation myAspectAnnotation){
         log.info("进入方法执行前切面...................");
-        MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
-        Method method = methodSignature.getMethod();
-        String name = myAspectAnnotation.name();
+        String name = (String) AnnotationResolverNew.newInstance().resolver(joinPoint, myAspectAnnotation.name());
         log.info("name...................{}", name);
     }
 
     @After(value = "@annotation(myAspectAnnotation)", argNames = "joinPoint,myAspectAnnotation")
     public void afterLog(JoinPoint joinPoint, MyAspectAnnotation myAspectAnnotation){
         log.info("进入方法执行后切面...................");
-        MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
-        Method method = methodSignature.getMethod();
-        String name = myAspectAnnotation.name();
+        String name = (String) AnnotationResolverNew.newInstance().resolver(joinPoint, myAspectAnnotation.name());
         log.info("name...................{}", name);
-    }*/
+    }
 
 }
