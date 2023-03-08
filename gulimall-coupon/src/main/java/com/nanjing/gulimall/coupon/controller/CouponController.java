@@ -7,6 +7,7 @@ import com.nanjing.common.utils.PageUtils;
 import com.nanjing.common.utils.R;
 import com.nanjing.common.zhoushuaop.BusinessType;
 import com.nanjing.common.zhoushuaop.Log;
+import com.nanjing.common.zhoushuaop.OperatorType;
 import com.nanjing.gulimall.coupon.entity.CouponEntity;
 import com.nanjing.gulimall.coupon.service.CouponService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +33,7 @@ public class CouponController {
 
 
     @RequestMapping("/coupon/list")
-    @Log(title = "查询优惠券信息", businessType = BusinessType.OTHER)
+    @Log(title = "查询优惠券信息", businessType = BusinessType.OTHER, operatorType = OperatorType.MANAGE)
     public R coupons(){
         CouponEntity couponEntity = new CouponEntity();
         couponEntity.setCouponName("满100减50");

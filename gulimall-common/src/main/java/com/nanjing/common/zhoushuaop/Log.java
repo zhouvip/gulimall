@@ -26,6 +26,11 @@ public @interface Log {
     BusinessType businessType() default BusinessType.OTHER;
 
     /**
+     * 操作人类别
+     */
+    OperatorType operatorType() default OperatorType.MANAGE;
+
+    /**
      * 是否保存请求的参数
      */
     boolean isSaveRequestData() default true;
