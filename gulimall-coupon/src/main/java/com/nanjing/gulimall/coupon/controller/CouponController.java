@@ -1,21 +1,14 @@
 package com.nanjing.gulimall.coupon.controller;
 
-import java.util.Arrays;
-import java.util.Map;
-
 import com.nanjing.common.utils.PageUtils;
 import com.nanjing.common.utils.R;
-import com.nanjing.common.zhoulogaop.BusinessType;
-import com.nanjing.common.zhoulogaop.Log;
-import com.nanjing.common.zhoulogaop.OperatorType;
 import com.nanjing.gulimall.coupon.entity.CouponEntity;
 import com.nanjing.gulimall.coupon.service.CouponService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Arrays;
+import java.util.Map;
 
 
 /**
@@ -33,7 +26,6 @@ public class CouponController {
 
 
     @RequestMapping("/coupon/list")
-    @Log(title = "查询优惠券信息", businessType = BusinessType.OTHER, operatorType = OperatorType.MANAGE)
     public R coupons(){
         CouponEntity couponEntity = new CouponEntity();
         couponEntity.setCouponName("满100减50");
