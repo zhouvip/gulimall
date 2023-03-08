@@ -10,12 +10,12 @@ package com.nanjing.gulimall.zhouyimo.aspectj;
 import cn.hutool.core.lang.Dict;
 import cn.hutool.core.map.MapUtil;
 import cn.hutool.core.util.ObjectUtil;
-import com.nanjing.common.zhoulogaop.*;
 import com.nanjing.gulimall.zhouyimo.annotation.Log;
 import com.nanjing.gulimall.zhouyimo.entity.SysOperLog;
 import com.nanjing.gulimall.zhouyimo.enums.BusinessStatus;
 import com.nanjing.gulimall.zhouyimo.manager.AsyncManager;
 import com.nanjing.gulimall.zhouyimo.manager.factory.AsyncFactory;
+import com.nanjing.gulimall.zhouyimo.utils.AnnotationResolver;
 import com.nanjing.gulimall.zhouyimo.utils.IpUtils;
 import com.nanjing.gulimall.zhouyimo.utils.JsonUtils;
 import com.nanjing.gulimall.zhouyimo.utils.ServletUtils;
@@ -25,6 +25,7 @@ import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
+import org.springframework.core.NamedThreadLocal;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.BindingResult;
@@ -54,6 +55,9 @@ public class LogAspect {
      * 排除敏感属性字段
      */
     public static final String[] EXCLUDE_PROPERTIES = { "password", "oldPassword", "newPassword", "confirmPassword" };
+
+    /** 计算操作消耗时间 */
+    private static final ThreadLocal<Long> TIME_THREADLOCAL = new NamedThreadLocal<Long>("Cost Time");
 
     /**
      * 处理完请求后执行
@@ -108,6 +112,8 @@ public class LogAspect {
             getControllerMethodDescription(joinPoint, controllerLog, operLog, jsonResult);
             // 获取IP地址
             operLog.setOperIp(IpUtils.getIpAddr(request));
+            // 设置消耗时间
+            operLog.setCostTime(System.currentTimeMillis() - TIME_THREADLOCAL.get());
             // 保存数据库
             AsyncManager.me().execute(AsyncFactory.recordOper(operLog));
             System.out.println("----------"+operLog);

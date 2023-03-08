@@ -1,4 +1,4 @@
-package com.nanjing.common.zhoulogaop;
+package com.nanjing.gulimall.zhouyimo.utils;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.reflect.MethodSignature;
