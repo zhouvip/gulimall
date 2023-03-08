@@ -32,7 +32,7 @@ public class CouponController {
 
 
     @RequestMapping("/coupon/list")
-    @Log(title = "查询优惠券信息", businessType = BusinessType.OTHER)
+    @Log(title = "查询优惠券信息", businessType = BusinessType.VIEW)
     public R coupons(){
         CouponEntity couponEntity = new CouponEntity();
         couponEntity.setCouponName("满100减50");
