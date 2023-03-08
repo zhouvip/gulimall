@@ -22,7 +22,7 @@ class GulimallCouponApplicationTests {
         coupon.setCouponName("优惠券2023");
         //couponService.save(coupon);
         //couponService.show();
-        //couponService.show2();
+        couponService.show2();
         System.out.println("保存成功----------");
     }
 
@@ -44,6 +44,8 @@ class GulimallCouponApplicationTests {
         couponService.doSomeThing(key,student);
         System.out.println("成功----------");
     }
+
+
 
 
 }

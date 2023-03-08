@@ -6,6 +6,8 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.nanjing.common.utils.PageUtils;
 import com.nanjing.common.utils.Query;
 import com.nanjing.common.zhouaop.PringLog;
+import com.nanjing.common.zhoushuaop.BusinessType;
+import com.nanjing.common.zhoushuaop.Log;
 import com.nanjing.gulimall.coupon.dao.CouponDao;
 import com.nanjing.gulimall.coupon.entity.CouponEntity;
 import com.nanjing.gulimall.coupon.service.CouponService;
@@ -47,5 +49,7 @@ public class CouponServiceImpl extends ServiceImpl<CouponDao, CouponEntity> impl
     public void doSomeThing(String key, Student student){
         System.out.println("doSomeThing..........................");
     }
+
+
 
 }

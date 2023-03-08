@@ -5,6 +5,7 @@ import java.util.Map;
 
 import com.nanjing.common.utils.PageUtils;
 import com.nanjing.common.utils.R;
+import com.nanjing.common.zhoushuaop.Log;
 import com.nanjing.gulimall.coupon.entity.CouponEntity;
 import com.nanjing.gulimall.coupon.service.CouponService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +29,9 @@ public class CouponController {
     @Autowired
     private CouponService couponService;
 
+
     @RequestMapping("/coupon/list")
+    @Log(title = "张三")
     public R coupons(){
         CouponEntity couponEntity = new CouponEntity();
         couponEntity.setCouponName("满100减50");
@@ -40,6 +43,8 @@ public class CouponController {
         }
         return R.ok().put("coupons", Arrays.asList(couponEntity));
     }
+
+    //----------------------------------------------------------------------------------------------------------
 
     /**
      * 列表

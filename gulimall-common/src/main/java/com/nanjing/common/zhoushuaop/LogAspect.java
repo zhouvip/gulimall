@@ -23,9 +23,11 @@ import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.HandlerMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Collection;
 import java.util.Map;
 
 /**
@@ -98,7 +100,8 @@ public class LogAspect {
             // 获取IP地址
             operLog.setOperIp(IpUtils.getIpAddr(request));
             // 保存数据库
-            SpringUtils.getBean(LogRecordService.class).recordOper(operLog);
+            //SpringUtils.getBean(LogRecordService.class).recordOper(operLog);
+            System.out.println("----------"+operLog);
         } catch (Exception exp) {
             // 记录本地异常日志
             log.error("==前置通知异常==");

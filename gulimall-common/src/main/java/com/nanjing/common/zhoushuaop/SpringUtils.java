@@ -1,10 +1,6 @@
 package com.nanjing.common.zhoushuaop;
 
-/**
- * @author yimo
- * @version 1.0
- * @date 2023/3/7 19:11
- */
+
 
 import cn.hutool.extra.spring.SpringUtil;
 import org.springframework.aop.framework.AopContext;
@@ -12,9 +8,10 @@ import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.stereotype.Component;
 
 /**
+ * @author yimo
+ * @version 1.0
+ * @date 2023/3/7 19:11
  * spring工具类
- *
- * @author admin
  */
 @Component
 public final class SpringUtils extends SpringUtil {

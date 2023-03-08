@@ -1,21 +1,14 @@
 package com.nanjing.common.zhoushuaop;
-
-/**
- * @author yimo
- * @version 1.0
- * @date 2023/3/7 16:46
- */
-
 import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Date;
-
 /**
+ * @author yimo
+ * @version 1.0
+ * @date 2023/3/7 16:46
  * 通用操作日志实体
- *
  */
-
 @Data
 public class OperLogDTO implements Serializable {
 

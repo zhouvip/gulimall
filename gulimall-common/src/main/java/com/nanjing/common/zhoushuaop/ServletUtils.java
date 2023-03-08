@@ -1,16 +1,12 @@
 package com.nanjing.common.zhoushuaop;
 
-/**
- * @author yimo
- * @version 1.0
- * @date 2023/3/7 16:50
- */
+
 
 import cn.hutool.core.convert.Convert;
 import cn.hutool.extra.servlet.ServletUtil;
+import cn.hutool.http.HttpStatus;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
-import org.apache.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
@@ -22,12 +18,16 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
+import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 
 /**
+ * @author yimo
+ * @version 1.0
+ * @date 2023/3/7 16:50
  * 客户端工具类
- *
  */
+
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class ServletUtils extends ServletUtil {
 
@@ -154,7 +154,7 @@ public class ServletUtils extends ServletUtil {
      */
     public static String urlEncode(String str) {
         try {
-            return URLEncoder.encode(str, Constants.UTF8);
+            return URLEncoder.encode(str,  "UTF-8");
         } catch (UnsupportedEncodingException e) {
             return StringUtils.EMPTY;
         }
@@ -168,7 +168,7 @@ public class ServletUtils extends ServletUtil {
      */
     public static String urlDecode(String str) {
         try {
-            return URLDecoder.decode(str, Constants.UTF8);
+            return URLDecoder.decode(str, "UTF-8");
         } catch (UnsupportedEncodingException e) {
             return StringUtils.EMPTY;
         }
