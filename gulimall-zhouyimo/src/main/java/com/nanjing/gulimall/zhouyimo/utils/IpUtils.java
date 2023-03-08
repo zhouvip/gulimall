@@ -1,4 +1,4 @@
-package com.nanjing.common.zhoulogaop;
+package com.nanjing.gulimall.zhouyimo.utils;
 
 import javax.servlet.http.HttpServletRequest;
 import java.net.InetAddress;

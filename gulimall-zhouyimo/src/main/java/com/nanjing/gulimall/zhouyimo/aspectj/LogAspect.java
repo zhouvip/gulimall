@@ -1,4 +1,4 @@
-package com.nanjing.common.zhoulogaop;
+package com.nanjing.gulimall.zhouyimo.aspectj;
 
 /**
  * @author yimo
@@ -10,6 +10,10 @@ package com.nanjing.common.zhoulogaop;
 import cn.hutool.core.lang.Dict;
 import cn.hutool.core.map.MapUtil;
 import cn.hutool.core.util.ObjectUtil;
+import com.nanjing.common.zhoulogaop.*;
+import com.nanjing.gulimall.zhouyimo.entity.SysOperLog;
+import com.nanjing.gulimall.zhouyimo.manager.AsyncManager;
+import com.nanjing.gulimall.zhouyimo.manager.factory.AsyncFactory;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.aspectj.lang.JoinPoint;
@@ -76,7 +80,7 @@ public class LogAspect {
             AnnotationResolver annotationResolver = AnnotationResolver.newInstance();
             Object paramObj = annotationResolver.resolver(joinPoint, controllerLog.userName());
             // *========数据库日志=========*//
-            OperLogDTO operLog = new OperLogDTO();
+            SysOperLog operLog = new SysOperLog();
             operLog.setStatus(BusinessStatus.SUCCESS.ordinal());
             // 请求的地址
             String ip = ServletUtils.getClientIP();
@@ -100,7 +104,7 @@ public class LogAspect {
             // 获取IP地址
             operLog.setOperIp(IpUtils.getIpAddr(request));
             // 保存数据库
-            //SpringUtils.getBean(LogRecordService.class).recordOper(operLog);
+            AsyncManager.me().execute(AsyncFactory.recordOper(operLog));
             System.out.println("----------"+operLog);
         } catch (Exception exp) {
             // 记录本地异常日志
@@ -117,7 +121,7 @@ public class LogAspect {
      * @param operLog 操作日志
      * @throws Exception
      */
-    public void getControllerMethodDescription(JoinPoint joinPoint, Log log, OperLogDTO operLog, Object jsonResult) throws Exception {
+    public void getControllerMethodDescription(JoinPoint joinPoint, Log log, SysOperLog operLog, Object jsonResult) throws Exception {
         // 设置action动作
         operLog.setBusinessType(log.businessType().ordinal());
         // 设置标题
@@ -141,7 +145,7 @@ public class LogAspect {
      * @param operLog 操作日志
      * @throws Exception 异常
      */
-    private void setRequestValue(JoinPoint joinPoint, OperLogDTO operLog) throws Exception {
+    private void setRequestValue(JoinPoint joinPoint, SysOperLog operLog) throws Exception {
         String requestMethod = operLog.getRequestMethod();
         if (HttpMethod.PUT.name().equals(requestMethod) || HttpMethod.POST.name().equals(requestMethod)) {
             String params = argsArrayToString(joinPoint.getArgs());

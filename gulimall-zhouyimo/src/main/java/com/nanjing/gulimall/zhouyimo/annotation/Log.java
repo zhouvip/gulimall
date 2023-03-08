@@ -1,4 +1,7 @@
-package com.nanjing.common.zhoulogaop;
+package com.nanjing.gulimall.zhouyimo.annotation;
+
+import com.nanjing.common.zhoulogaop.BusinessType;
+import com.nanjing.common.zhoulogaop.OperatorType;
 
 import java.lang.annotation.*;
 

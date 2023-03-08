@@ -1,4 +1,4 @@
-package com.nanjing.common.zhoulogaop;
+package com.nanjing.gulimall.zhouyimo.enums;
 
 /**
  * @author yimo
