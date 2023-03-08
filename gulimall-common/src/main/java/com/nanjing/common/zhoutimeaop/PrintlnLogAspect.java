@@ -1,4 +1,4 @@
-package com.nanjing.common.zhouaop;
+package com.nanjing.common.zhoutimeaop;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class PrintlnLogAspect {
 
-    @Around("@annotation(com.nanjing.common.zhouaop.PringLog)")
+    @Around("@annotation(com.nanjing.common.zhoutimeaop.PringLog)")
     public Object around(ProceedingJoinPoint joinPoint) {
         long startTime = System.currentTimeMillis();
         System.out.println("log - method around before");

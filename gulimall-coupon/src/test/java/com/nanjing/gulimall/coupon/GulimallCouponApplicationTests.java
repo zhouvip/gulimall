@@ -1,7 +1,7 @@
 package com.nanjing.gulimall.coupon;
 
-import com.nanjing.common.zhouaop.AppConfig;
-import com.nanjing.common.zhouaop.Car;
+import com.nanjing.common.zhoutimeaop.AppConfig;
+import com.nanjing.common.zhoutimeaop.Car;
 import com.nanjing.gulimall.coupon.entity.CouponEntity;
 import com.nanjing.gulimall.coupon.service.CouponService;
 import com.nanjing.gulimall.coupon.zhouyimoaop.Student;

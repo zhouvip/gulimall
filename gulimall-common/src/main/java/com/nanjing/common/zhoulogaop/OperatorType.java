@@ -1,4 +1,4 @@
-package com.nanjing.common.zhoushuaop;
+package com.nanjing.common.zhoulogaop;
 
 /**
  * 操作人类别
