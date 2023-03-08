@@ -11,9 +11,14 @@ import cn.hutool.core.lang.Dict;
 import cn.hutool.core.map.MapUtil;
 import cn.hutool.core.util.ObjectUtil;
 import com.nanjing.common.zhoulogaop.*;
+import com.nanjing.gulimall.zhouyimo.annotation.Log;
 import com.nanjing.gulimall.zhouyimo.entity.SysOperLog;
+import com.nanjing.gulimall.zhouyimo.enums.BusinessStatus;
 import com.nanjing.gulimall.zhouyimo.manager.AsyncManager;
 import com.nanjing.gulimall.zhouyimo.manager.factory.AsyncFactory;
+import com.nanjing.gulimall.zhouyimo.utils.IpUtils;
+import com.nanjing.gulimall.zhouyimo.utils.JsonUtils;
+import com.nanjing.gulimall.zhouyimo.utils.ServletUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.aspectj.lang.JoinPoint;
@@ -83,7 +88,7 @@ public class LogAspect {
             SysOperLog operLog = new SysOperLog();
             operLog.setStatus(BusinessStatus.SUCCESS.ordinal());
             // 请求的地址
-            String ip = ServletUtils.getClientIP();
+            String ip = IpUtils.getIpAddr(request);
             operLog.setOperIp(ip);
             operLog.setOperUrl(StringUtils.substring(ServletUtils.getRequest().getRequestURI(), 0, 255));
             // 操作人

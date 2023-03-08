@@ -1,7 +1,7 @@
 package com.nanjing.gulimall.zhouyimo.annotation;
 
-import com.nanjing.common.zhoulogaop.BusinessType;
-import com.nanjing.common.zhoulogaop.OperatorType;
+import com.nanjing.gulimall.zhouyimo.enums.BusinessType;
+import com.nanjing.gulimall.zhouyimo.enums.OperatorType;
 
 import java.lang.annotation.*;
 

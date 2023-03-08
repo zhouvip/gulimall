@@ -1,7 +1,7 @@
 package com.nanjing.gulimall.zhouyimo.manager;
 
-import com.nanjing.common.zhoulogaop.SpringUtils;
-import com.nanjing.common.zhoulogaop.Threads;
+import com.nanjing.gulimall.zhouyimo.utils.SpringUtils;
+import com.nanjing.gulimall.zhouyimo.utils.Threads;
 
 import java.util.TimerTask;
 import java.util.concurrent.ScheduledExecutorService;

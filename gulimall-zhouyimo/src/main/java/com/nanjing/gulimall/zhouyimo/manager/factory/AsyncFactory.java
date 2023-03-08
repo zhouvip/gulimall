@@ -1,10 +1,8 @@
 package com.nanjing.gulimall.zhouyimo.manager.factory;
 
-import com.nanjing.common.zhoulogaop.SpringUtils;
 import com.nanjing.gulimall.zhouyimo.entity.SysOperLog;
 import com.nanjing.gulimall.zhouyimo.service.ISysOperLogService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.nanjing.gulimall.zhouyimo.utils.SpringUtils;
 
 import java.util.TimerTask;
 
