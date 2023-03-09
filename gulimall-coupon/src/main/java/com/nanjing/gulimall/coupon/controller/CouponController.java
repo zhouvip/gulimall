@@ -25,21 +25,6 @@ public class CouponController {
     private CouponService couponService;
 
 
-    @RequestMapping("/coupon/list")
-    public R coupons(){
-        CouponEntity couponEntity = new CouponEntity();
-        couponEntity.setCouponName("满100减50");
-        //测试模拟feign调用超时
-        try {
-            Thread.sleep(50000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        return R.ok().put("coupons", Arrays.asList(couponEntity));
-    }
-
-    //--------------------------------------------------------------------------------
-
     /**
      * 列表
      */

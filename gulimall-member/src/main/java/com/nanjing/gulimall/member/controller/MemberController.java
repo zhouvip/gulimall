@@ -32,22 +32,6 @@ public class MemberController {
     @Autowired
     private MemberService memberService;
 
-    @Autowired
-    CouponFeignClient couponFeignClient;
-
-    /*
-     * @filename: MemberController.java
-     * @author: yimo
-     * @date: 2023/2/22 13:50
-     * @description: 测试feign调用
-     **/
-    @RequestMapping("/coupons")
-    public R test(){
-        MemberEntity memberEntity = new MemberEntity();
-        memberEntity.setNickname("花无缺");
-        R membercoupons = couponFeignClient.coupons();
-        return R.ok().put("member", memberEntity).put("coupons",membercoupons.get("coupons"));
-    }
 
     /**
      * 列表
