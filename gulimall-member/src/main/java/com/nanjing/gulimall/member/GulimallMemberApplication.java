@@ -7,7 +7,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-@EnableFeignClients(basePackages = "com.nanjing.gulimall.coupon.api")
+@EnableFeignClients(basePackages = "com.nanjing.gulimall.coupon.*")
 public class GulimallMemberApplication {
 
     public static void main(String[] args) {
