@@ -41,8 +41,9 @@ ribbon:
   #指的是建立连接所用的时间，适用于网络状况正常的情况下，两端连接所用的时间
   ConnectTimeout: 2000
 
+
 logging:
   level:
     # feign日志以什么级别监控哪个接口
-    com.nanjing.gulimall.coupon.feign.CouponFeignClient: debug
+    com.nanjing.gulimall.coupon.api.feign.CouponFeignClient: debug
 

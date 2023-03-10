@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2023-02-05 21:34:27
  */
 @RestController
-@RequestMapping("feign/member")
+@RequestMapping("v1/feign")
 public class TestFeignController {
 
 
@@ -33,23 +33,17 @@ public class TestFeignController {
     public R test(){
         MemberEntity memberEntity = new MemberEntity();
         memberEntity.setNickname("花无缺");
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         R membercoupons = couponFeignClient.coupons();
         return R.ok().put("member", memberEntity).put("coupons",membercoupons.get("coupons"));
     }
 
 
-    /*@RequestMapping("/coupon/list")
-    public R coupons(){
-        CouponEntity couponEntity = new CouponEntity();
-        couponEntity.setCouponName("满100减50");
-        //测试模拟feign调用超时
-        try {
-            Thread.sleep(50000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        return R.ok().put("coupons", Arrays.asList(couponEntity));
-    }*/
+
 
 
 

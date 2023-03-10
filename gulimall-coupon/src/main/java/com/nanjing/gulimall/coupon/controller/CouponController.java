@@ -26,6 +26,17 @@ public class CouponController {
 
 
     /**
+     * 测试Feign接口
+     */
+    @RequestMapping("/test/list")
+    public R membercoupons(){
+        CouponEntity couponEntity = new CouponEntity();
+        couponEntity.setCouponName("满100减50");
+        return R.ok().put("coupons", Arrays.asList(couponEntity));
+    }
+
+
+    /**
      * 列表
      */
     @RequestMapping("/list")
