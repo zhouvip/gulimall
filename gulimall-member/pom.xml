@@ -24,8 +24,8 @@
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>com.nanjing.gulimall</groupId>
-            <artifactId>gulimall-api</artifactId>
+            <groupId>com.nanjing</groupId>
+            <artifactId>gulimall-coupon-api</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>

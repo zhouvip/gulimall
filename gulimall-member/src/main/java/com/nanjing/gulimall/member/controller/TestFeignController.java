@@ -1,16 +1,11 @@
 package com.nanjing.gulimall.member.controller;
 
-import com.nanjing.common.utils.PageUtils;
 import com.nanjing.common.utils.R;
-import com.nanjing.gulimall.coupon.entity.CouponEntity;
-import com.nanjing.gulimall.coupon.feign.CouponFeignClient;
+import com.nanjing.gulimall.coupon.api.feign.CouponFeignClient;
 import com.nanjing.gulimall.member.entity.MemberEntity;
-import com.nanjing.gulimall.member.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.Arrays;
-import java.util.Map;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 
 /**
